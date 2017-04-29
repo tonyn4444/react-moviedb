@@ -1,30 +1,48 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchData } from '../actions';
 
 class SearchBar extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = { searchTerm: '' }
+
+		this.onInputChange = this.onInputChange.bind(this);
+		this.onSearchSubmit = this.onSearchSubmit.bind(this);
 	}
 
-	onInputChange(term) {
+	onInputChange(event) {
 		this.setState({
-			searchTerm: term
-		})
-		this.props.onSearch(term)
+			searchTerm: event.target.value
+		});
+	}
+
+	onSearchSubmit(event) {
+		event.preventDefault();
+
+		this.props.fetchData(this.state.searchTerm);
+		this.setState({
+			searchTerm: ''
+		});
 	}
 
 	render() {
 		// console.log(this.props)
 		return (
-			<div className="searchbar">
+			<form onSubmit={this.onSearchSubmit} className="searchbar">
 				<input 
 				value={this.state.searchTerm}
-				onChange={(event) => this.onInputChange(event.target.value)}
+				onChange={this.onInputChange}
 				className="search" />
-			</div>
+			</form>
 		)
 	}
 }
 
-export default SearchBar;
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ fetchData }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
