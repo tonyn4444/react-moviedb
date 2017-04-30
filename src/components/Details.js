@@ -20,16 +20,16 @@ const MovieDetail = (props) => {
 							<span id="release-date">{props.movieData.release_date}</span>
 					</div>
 					<div id="release-date-container" className="top-half">
-						<h3 id="release-date-title">Release date:</h3>
-							<span id="release-date">{props.movieData.release_date}</span>
+						<h3 id="release-date-title">Vote Average:</h3>
+							<span id="release-date">{props.movieData.vote_average}/10</span>
 					</div>
 					<div id="release-date-container">
-						<h3 id="release-date-title">Release date:</h3>
-							<span id="release-date">{props.movieData.release_date}</span>
+						<h3 id="release-date-title">Vote Count:</h3>
+							<span id="release-date">{props.movieData.vote_count}</span>
 					</div>
 					<div id="release-date-container">
-						<h3 id="release-date-title">Release date:</h3>
-							<span id="release-date">{props.movieData.release_date}</span>
+						<h3 id="release-date-title">Popularity Rating:</h3>
+							<span id="release-date">{props.movieData.popularity}</span>
 					</div>
 				</div>
 			</div>
