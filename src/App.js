@@ -37,26 +37,28 @@ class App extends Component {
 			}.bind(this));
 		}
 
+
+
   render() {
-  	console.log(this.props);
+  	// console.log(this.props);
 
-  	if(this.state.initialMovie || this.props.movie) {
-			var imgUrl = 'http://image.tmdb.org/t/p/w1280//' + this.state.initialMovie.backdrop_path
-		}
+  	if (this.props.movie || this.state.initialMovie) {
+  		var imgUrl = this.props.movie ? 'http://image.tmdb.org/t/p/w1280//' + this.props.movie.backdrop_path : 'http://image.tmdb.org/t/p/w1280//' + this.state.initialMovie.backdrop_path 
+  		document.body.style.backgroundImage = 'url(' + imgUrl + ')';
 
-		var backdropStyle = {
-  		background: `url(${imgUrl})`,
-  		backgroundRepeat: 'no-repeat',
-  		backgroundSize: 'cover',
-  		backgroundPosition: 'center'
-		}
+  	}
+  	// this.props.movie ? var imgUrl = 'http://image.tmdb.org/t/p/w1280//' + this.props.movie.backdrop_path : var imgUrl = 'http://image.tmdb.org/t/p/w1280//' + this.state.initialMovie.backdrop_path 
+		// document.body.style.backgroundImage 
+			// var imgUrl = 'http://image.tmdb.org/t/p/w1280//' + this.state.initialMovie.backdrop_path || this.props.movie.backdrop_path
+			// document.body.style.backgroundImage = 'url(' + imgUrl + ')';
 
-  	// console.log(this.state.movie);
+
     return (
-      <div className="container" style={backdropStyle}>
-        <SearchBar className="searchbar" />
-        <MovieDetail movieData={this.props.movie ? this.props.movie : this.state.initialMovie} />
-      </div>
+	      <div className="container">
+	      	<SearchBar className="searchbar" />
+	        <MovieDetail movieData={this.props.movie ? this.props.movie : this.state.initialMovie} />
+	        <div id="credit">By Tony Nguyen</div>
+	      </div>
     );
   }
 }

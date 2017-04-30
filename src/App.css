@@ -1,17 +1,26 @@
 #detail-container {
-	/*max-height: 1000px;*/
-	max-height: 550px;
-	min-height: 550px;
-	border: 2px solid red;
+	min-height: 650px;
+	max-height: 650px;
+	/*border: 2px solid red;*/
 	margin: 0 auto;
-	width: 90%;
-	margin-top: 50px;
-	background: black;
+	width: 900px;
 }
 
 body {
 	background-color: black;
 	color: white;
+	font-family: Raleway;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+.wrap {
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
 * {
@@ -20,56 +29,122 @@ body {
 
 #content {
 	padding: 5px;
-	border: 2px solid blue;
+	background: black;
+	/*border: 2px solid blue;*/
 	width: 60%;
 	float: right;
 	height: 550px;
+	opacity: 0.85;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
 .container {
 	min-height: 750px;
+	width: 70%;
 	margin: 0 auto;
-	border: 2px solid red;
+	/*border: 2px solid red;*/
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 .searchbar {
-	border: 2px solid red;
-	margin-top: 30px;
 	justify-content: center;
+	/*border: 2px solid red;*/
+	height: 120px;
+	/*background: black;*/
+	width: 100%;
+	/*opacity: 0.85;*/
 }
 
 .search {
 	margin: 0 auto;
-	border: 2px solid blue;
+	margin-top: 50px;
 	margin-left: 60%;
+	width: 250px;
+	background: black;
+	opacity: .85;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+	border: 2px solid white;
+	border-radius: 2px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-weight: 550;
 }
 
-h1, h2 {
+.title-tagline {
 	margin-left: 20px;
 	margin-top: 10px;
 }
 
-h2 {
-	margin-top: -3%;
+h1 {
+	font-size: 45px;
 }
+
+.tagline {
+	margin-top: -5px;
+}
+
+#stats {
+	/*border: 2px solid limegreen;*/
+	height: 300px;
+	margin-right: 10px;
+	margin-left: 20px;
+}
+
+#release-date-container {
+	display: inline-block;
+	width: 50%;
+}
+
+#release-date {
+	/*border: 2px solid green;*/
+	font-size: 25px;
+	font-weight: 600;
+	color: limegreen;
+}
+
+.top-half {
+	margin-top: 20px;
+}
+
+
+#release-date-container {
+	/*border: 2px solid red;*/
+}
+
+#release-date-title {
+	margin-bottom: 7px;
+}
+
+
 
 p {
 	margin-left: 20px;
+	font-size: 18px;
+	padding-right: 2px;
 }
 
 #poster {
 	width: 100%;
 	height: 100%;
-	/*height: 525px;*/
-	/*max-height: 525px;*/
 }
 
 #pic {
 	width: 40%;
-	/*max-height: 525px;*/
-	/*border: 2px solid red;*/
 	float: left;
 	height: 550px;
+}
+
+#credit {
+	color: white;
+	/*border: 2px solid red;*/
+	font-size: 18px;
+	text-align: center;
+	margin-top: -75px;
+	font-weight: 700;
 }
 
 
