@@ -1,1 +1,12 @@
+.custom-nav {
+	background-color: #283e4a;
+}
 
+.nav-links {
+	color: white !important;
+	font-size: 1.5em;
+}
+
+.nav-links:hover {
+	background-color: grey !important;
+}

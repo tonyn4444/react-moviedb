@@ -7,6 +7,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import MovieDetail from './components/Details';
 import { fetchData } from './actions';
+import Navbar from './components/NavBar';
 
 // const rootURL = "https://api.themoviedb.org/3/movie/550?api_key="
 const rootURL = `https://api.themoviedb.org/3/search/movie?api_key=3d0f2b582ef98fc57bea7865717255e1&language=en-US&query=inception&page=1&include_adult=false`
@@ -54,11 +55,14 @@ class App extends Component {
 
 
     return (
+    	<div>
+    		<Navbar />
 	      <div className="container">
 	      	<SearchBar className="searchbar" />
 	        <MovieDetail movieData={this.props.movie ? this.props.movie : this.state.initialMovie} />
 	        <div id="credit">By Tony Nguyen</div>
 	      </div>
+	   	</div>
     );
   }
 }

@@ -6,13 +6,7 @@ import Explore from './components/Explore';
 const AppRouter = () => {
 	return (
 		<Router>
-			<div>
-				<ul>
-					<Link to="/"><li>Home</li></Link>
-					<Link to="/explore"><li>Explore</li></Link>
-				</ul>
-
-				<hr />
+			<div>		
 			<Route exact path="/" component={App} />
 			<Route path="/explore" component={Explore} />
 			</div>
